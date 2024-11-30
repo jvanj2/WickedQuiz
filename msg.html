@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensagem para Larissa</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <style>
+        body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.message {
+    font-size: 2rem;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cursor {
+    font-weight: bold;
+    color: #333;
+    animation: blink 0.7s step-start infinite;
+}
+
+.hidden {
+    display: none;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#fullMessage {
+    margin-top: 20px;
+    font-size: 1.5rem;
+    color: #333;
+    font-weight: bold;
+    display: none;
+}
+
+    </style>
+    <div class="container">
+        <div class="message">
+            <span id="animatedText"></span>
+            <span class="cursor">|</span>
+        </div>
+        <button id="openMessageButton" onclick="redirigir()"class="hidden">Abrir Mensagem</button>
+        <div id="fullMessage" class="hidden">
+            <p>Larissa, você é incrível! Essa mensagem foi deixada com muito carinho. ❤️</p>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    const textElement = document.getElementById('animatedText');
+    const openMessageButton = document.getElementById('openMessageButton');
+    const fullMessage = document.getElementById('fullMessage');
+    const text = "Larissa, deixaram uma mensagem para você";
+    let index = 0;
+
+    // Função para efeito de digitação
+    function typeEffect() {
+        if (index < text.length) {
+            textElement.textContent += text.charAt(index);
+            index++;
+            setTimeout(typeEffect, 100); // Velocidade da digitação
+        } else {
+            // Exibe o botão após a digitação
+            openMessageButton.classList.remove('hidden');
+        }
+    }
+
+    // Função para abrir a mensagem
+    openMessageButton.addEventListener('click', () => {
+        openMessageButton.classList.add('hidden');
+        fullMessage.classList.remove('hidden');
+    });
+
+    typeEffect();
+});
+
+
+function redirigir() {
+            
+        window.location.href = "teste2.html";
+        }
+    </script>
+</body>
+</html>

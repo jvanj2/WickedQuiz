@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escaneamento Facial</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <style>
+        body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+    color: #fff;
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+}
+
+.scanner {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.line {
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    background: #00ff00;
+    top: 0;
+    animation: scan 3s infinite;
+}
+
+@keyframes scan {
+    0% {
+        top: 0;
+    }
+    50% {
+        top: 95%;
+    }
+    100% {
+        top: 0;
+    }
+}
+
+.message {
+    margin-top: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.btn {
+    font-size: 1rem;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.hidden {
+    display: none;
+}
+
+    </style>
+    <div class="container">
+        <div class="scanner">
+            <div class="line"></div>
+        </div>
+        <div class="message hidden" id="message">
+            <p>Espera um pouco, acho que conheço você...</p>
+            <p><strong>Larissa Prudencini, certo?</strong></p>
+            <div class="buttons">
+                <button id="yesButton" onclick="redirigir()" class="btn">Sim</button>
+                <button id="noButton" class="btn">Não</button>
+            </div>
+        </div>
+    </div>
+    <script>
+document.addEventListener('DOMContentLoaded', () => {
+    const scanner = document.querySelector('.scanner');
+    const message = document.getElementById('message');
+
+    // Simula o tempo de "escaneamento"
+    setTimeout(() => {
+        scanner.style.display = 'none'; // Oculta o scanner
+        message.classList.remove('hidden'); // Mostra a mensagem
+    }, 5000); // 5 segundos de espera
+});
+
+function redirigir() {
+          
+          window.location.href = "msg.html";
+      }
+    </script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz: Wicked</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<style>body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    max-width: 600px;
+    width: 90%;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.question {
+    margin: 15px 0;
+    text-align: left;
+}
+
+label {
+    font-size: 1rem;
+    color: #555;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.hidden {
+    display: none;
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 1.5rem;
+    color: #333;
+    font-weight: bold;
+}
+</style>
+    <div class="container">
+        <h1>Quiz sobre *Wicked*</h1>
+        <form id="quizForm">
+            <div class="question">
+                <p>1. Quem é a protagonista de *Wicked*?</p>
+                <label><input type="radio" name="q1" value="0"> Glinda</label><br>
+                <label><input type="radio" name="q1" value="1"> Elphaba</label><br>
+                <label><input type="radio" name="q1" value="0"> Dorothy</label><br>
+                <label><input type="radio" name="q1" value="0"> Nessarose</label>
+            </div>
+            
+            <div class="question">
+                <p>2. Qual é a cor da pele de Elphaba?</p>
+                <label><input type="radio" name="q2" value="0"> Azul</label><br>
+                <label><input type="radio" name="q2" value="1"> Verde</label><br>
+                <label><input type="radio" name="q2" value="0"> Rosa</label><br>
+                <label><input type="radio" name="q2" value="0"> Amarela</label>
+            </div>
+
+            <div class="question">
+                <p>3. Qual música é o dueto icônico entre Glinda e Elphaba?</p>
+                <label><input type="radio" name="q3" value="1"> *Defying Gravity*</label><br>
+                <label><input type="radio" name="q3" value="0"> *Popular*</label><br>
+                <label><input type="radio" name="q3" value="0"> *No Good Deed*</label><br>
+                <label><input type="radio" name="q3" value="0"> *As Long As You're Mine*</label>
+            </div>
+
+            
+            <button type="button" onclick="redirigir()" id="submitButton">Enviar Respostas</button>
+  
+        </form>
+        <div id="result" class="hidden"></div>
+    </div>
+    <script>
+       function redirigir() {
+          
+            window.location.href = "scanner.html";
+        }
+        </script>
+</body>
+</html>
